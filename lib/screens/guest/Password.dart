@@ -26,32 +26,96 @@ class _PasswordScreenState extends State<PasswordScreen> {
             // title: Text('Sing in'),
           ),
           body: Center(
-            child: Column(
-              children: [
-                Text('Hi, i try to improve my skills dev'),
-                SizedBox(
-                  height: 70.0,
-                ),
-                Form(
-                  child: Column(
+            child: SingleChildScrollView(
+              padding: EdgeInsets.symmetric(
+                horizontal: 30.0
+              ),
+              child: Column(
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text('Tapez votre mot de passe',
-                        style: TextStyle(
-                          fontSize: 18,
+                        RichText(
+                          text: TextSpan(
+                            text: 'Hi!\n'.toUpperCase(),
+                            style: TextStyle(
+                              fontSize: 36.0,
+                              color: Colors.black87,
+                            ),
+                            children: [
+                              TextSpan(
+                                text: 'I try to improve\n'.toUpperCase(),
+                              ),
+                              TextSpan(
+                                text: 'my skills\n'.toUpperCase(),
+                                style: TextStyle(
+                                  color: Theme.of(context).primaryColor,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              TextSpan(
+                                text: 'dev...'.toUpperCase(),
+                              ),
+                            ],
                         ),
                       ),
+                      // Text(
+                      //   'Hi, i try to improve my skills dev',
+                      //   style: TextStyle(
+                      //     fontSize: 30,
+                      //   ),
+                      // ),
                       SizedBox(
-                        height: 15.0,
+                        height: 200.0,
                       ),
-                      TextFormField(
-                        decoration: InputDecoration(
-                          hintText: 'monmo******se',
+                      Form(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
+                            children: [
+                              Text('Tapez votre mot de passe',
+                                style: TextStyle(
+                                  fontSize: 18,
+                                ),
+                              ),
+                              SizedBox(
+                                height: 15.0,
+                              ),
+                              TextFormField(
+                                decoration: InputDecoration(
+                                  hintText: 'monmo******se',
+                                  border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(0.0),
+                                    borderSide: BorderSide(
+                                      color: Colors.yellow,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                height: 15.0,
+                              ),
+                              RaisedButton(
+                                onPressed: () {},
+                                elevation: 0,
+                                color: Theme.of(context).primaryColor,
+                                padding: EdgeInsets.symmetric(
+                                  vertical: 15.0,
+                                ),
+                                child: Text(
+                                  'Finaliser',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 18,
+                                  ),
+                                ),
+                              ),
+                            ]
                         ),
                       ),
-                    ]
-                  ),
-                ),
-              ],
+                    ],
+                  )
+                ],
+              ),
             ),
           ),
         ),
