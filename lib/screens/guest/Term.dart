@@ -1,3 +1,5 @@
+import 'package:appmobile/screens/guest/Auth.dart';
+import 'package:appmobile/screens/guest/Password.dart';
 import 'package:flutter/material.dart';
 
 class TermScreen extends StatefulWidget {
@@ -30,7 +32,15 @@ class _TermScreenState extends State<TermScreen> {
                 Icons.arrow_back_ios
             ),
             color: Colors.black87,
-            onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder:
+                          (context) => AuthScreen(),
+                    )
+                );
+              },
           ),
         ),
         body: Padding(
@@ -73,7 +83,15 @@ class _TermScreenState extends State<TermScreen> {
                         0.0
                     ),
                   ),
-                  onPressed: () => print('Accept'),
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder:
+                              (context) => PasswordScreen(),
+                        )
+                    );
+                  },
                   child: Text(
                     'Valider',
                     style: TextStyle(

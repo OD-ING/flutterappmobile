@@ -11,7 +11,7 @@ class App extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Omeo',
-      home: PasswordScreen(),
+      home: AuthScreen(),
     );
   }
 }

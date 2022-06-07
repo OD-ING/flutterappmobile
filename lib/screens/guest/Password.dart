@@ -1,3 +1,5 @@
+import 'package:appmobile/screens/guest/Auth.dart';
+import 'package:appmobile/screens/guest/Term.dart';
 import 'package:flutter/material.dart';
 
 class PasswordScreen extends StatefulWidget {
@@ -8,6 +10,9 @@ class PasswordScreen extends StatefulWidget {
 }
 
 class _PasswordScreenState extends State<PasswordScreen> {
+
+  bool _isSecret = true;
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -18,7 +23,15 @@ class _PasswordScreenState extends State<PasswordScreen> {
             titleSpacing: 0.0,
             leading: IconButton(
               color: Colors.black87,
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder:
+                            (context) => TermScreen(),
+                      )
+                  );
+                },
                 icon: Icon(
                     Icons.arrow_back_ios,
                 ),
@@ -81,8 +94,19 @@ class _PasswordScreenState extends State<PasswordScreen> {
                                 height: 15.0,
                               ),
                               TextFormField(
+                                obscureText: _isSecret,
                                 decoration: InputDecoration(
-                                  hintText: 'monmo******se',
+                                  suffixIcon: InkWell(
+                                    onTap: () => setState(()
+                                      => _isSecret = !_isSecret,
+                                    ),
+                                    child: Icon(
+                                        !_isSecret
+                                            ? Icons.visibility
+                                            : Icons.visibility_off
+                                    ),
+                                  ),
+                                  hintText: 'dGJ%./JHHd',
                                   border: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(0.0),
                                     borderSide: BorderSide(
@@ -95,7 +119,15 @@ class _PasswordScreenState extends State<PasswordScreen> {
                                 height: 15.0,
                               ),
                               RaisedButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder:
+                                            (context) => AuthScreen(),
+                                      )
+                                  );
+                                },
                                 elevation: 0,
                                 color: Theme.of(context).primaryColor,
                                 padding: EdgeInsets.symmetric(
